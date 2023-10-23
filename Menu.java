@@ -8,11 +8,13 @@ public class Menu {
     String Description;
     int sel;
     int check;
+    int opt;
 
     ArrayList<Product> coffeList = new ArrayList<>();
     ArrayList<Product> decafeList = new ArrayList<>();
     ArrayList<Product> beverageList = new ArrayList<>();
     ArrayList<Product> dessertList = new ArrayList<>();
+    ArrayList<Product> optionList = new ArrayList<>();
     Scanner sc = new Scanner(System.in);
     Order order = new Order();
 
@@ -103,15 +105,31 @@ public class Menu {
         System.out.print("\"");
         System.out.printf("%-25s",coffeList.get(sel-1).getName());
         System.out.println("  | W " + coffeList.get(sel-1).getPrice() + " | " + coffeList.get(sel-1).getDescription()+ "\"");
+        ///////
+        System.out.println("위 메뉴의 어떤 옵션으로 추가하시겠습니까?");
+        System.out.println("1. Tall(W " + coffeList.get(sel-1).getPrice() + ")      2. Grande(W " + (coffeList.get(sel-1).getPrice()+1.0) +")");
+        System.out.println();
+
+        opt = sc.nextInt();
+        optionList.add(coffeList.get(sel-1));
+        if (opt==1){
+        } else if (opt==2) {
+            optionList.set(0,new Product(coffeList.get(sel-1).getName()+"(Grande)",coffeList.get(sel-1).getDescription(),coffeList.get(sel-1).getPrice()+1.0));
+        }
+        System.out.print("\"");
+        System.out.printf("%-25s",optionList.get(0).getName());
+        System.out.println("  | W " + optionList.get(0).getPrice() + " | " + optionList.get(0).getDescription()+ "\"");
 
         System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
         System.out.println("1. 확인           2. 취소");
         System.out.println();
 
         check = sc.nextInt();
+
         if (check == 1){
-            order.setOrderList(coffeList.get(sel-1));
-            System.out.println(coffeList.get(sel-1).getName() + " 가 장바구니에 추가되었습니다.");
+            order.setOrderList(optionList.get(0));
+            System.out.println(optionList.get(0).getName() + " 가 장바구니에 추가되었습니다.");
+            optionList.clear();
             System.out.println();
         } else if (check == 2) {
         } else {
@@ -138,14 +156,30 @@ public class Menu {
         System.out.printf("%-25s",decafeList.get(sel-1).getName());
         System.out.println("  | W " + decafeList.get(sel-1).getPrice() + " | " + decafeList.get(sel-1).getDescription()+ "\"");
 
+        System.out.println("위 메뉴의 어떤 옵션으로 추가하시겠습니까?");
+        System.out.println("1. Tall(W " + decafeList.get(sel-1).getPrice() + ")      2. Grande(W " + (decafeList.get(sel-1).getPrice()+1.0) +")");
+        System.out.println();
+
+        opt = sc.nextInt();
+        optionList.add(decafeList.get(sel-1));
+        if (opt==1){
+        } else if (opt==2) {
+            optionList.set(0,new Product(decafeList.get(sel-1).getName()+"(Grande)",decafeList.get(sel-1).getDescription(),decafeList.get(sel-1).getPrice()+1.0));
+        }
+        System.out.print("\"");
+        System.out.printf("%-25s",optionList.get(0).getName());
+        System.out.println("  | W " + optionList.get(0).getPrice() + " | " + optionList.get(0).getDescription()+ "\"");
+
         System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
         System.out.println("1. 확인           2. 취소");
         System.out.println();
 
         check = sc.nextInt();
+
         if (check == 1){
-            order.setOrderList(decafeList.get(sel-1));
-            System.out.println(decafeList.get(sel-1).getName() + " 가 장바구니에 추가되었습니다.");
+            order.setOrderList(optionList.get(0));
+            System.out.println(optionList.get(0).getName() + " 가 장바구니에 추가되었습니다.");
+            optionList.clear();
             System.out.println();
         } else if (check == 2) {
         } else {
@@ -172,14 +206,30 @@ public class Menu {
         System.out.printf("%-25s",beverageList.get(sel-1).getName());
         System.out.println("  | W " + beverageList.get(sel-1).getPrice() + " | " + beverageList.get(sel-1).getDescription()+ "\"");
 
+        System.out.println("위 메뉴의 어떤 옵션으로 추가하시겠습니까?");
+        System.out.println("1. Tall(W " + beverageList.get(sel-1).getPrice() + ")      2. Grande(W " + (beverageList.get(sel-1).getPrice()+1.0) +")");
+        System.out.println();
+
+        opt = sc.nextInt();
+        optionList.add(beverageList.get(sel-1));
+        if (opt==1){
+        } else if (opt==2) {
+            optionList.set(0,new Product(beverageList.get(sel-1).getName()+"(Grande)",beverageList.get(sel-1).getDescription(),beverageList.get(sel-1).getPrice()+1.0));
+        }
+        System.out.print("\"");
+        System.out.printf("%-25s",optionList.get(0).getName());
+        System.out.println("  | W " + optionList.get(0).getPrice() + " | " + optionList.get(0).getDescription()+ "\"");
+
         System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
         System.out.println("1. 확인           2. 취소");
         System.out.println();
 
         check = sc.nextInt();
+
         if (check == 1){
-            order.setOrderList(beverageList.get(sel-1));
-            System.out.println(beverageList.get(sel-1).getName() + " 가 장바구니에 추가되었습니다.");
+            order.setOrderList(optionList.get(0));
+            System.out.println(optionList.get(0).getName() + " 가 장바구니에 추가되었습니다.");
+            optionList.clear();
             System.out.println();
         } else if (check == 2) {
         } else {
@@ -206,18 +256,30 @@ public class Menu {
         System.out.printf("%-25s",dessertList.get(sel-1).getName());
         System.out.println("  | W " + dessertList.get(sel-1).getPrice() + " | " + dessertList.get(sel-1).getDescription()+ "\"");
 
-        System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
-        System.out.println("1. 확인           2. 취소");
+        System.out.println("위 메뉴의 어떤 옵션으로 추가하시겠습니까?");
+        System.out.println("1. Small(W " + dessertList.get(sel-1).getPrice() + ")      2. Large(W " + (dessertList.get(sel-1).getPrice()+1.0) +")");
         System.out.println();
+
+        opt = sc.nextInt();
+        optionList.add(dessertList.get(sel-1));
+        if (opt==1){
+        } else if (opt==2) {
+            optionList.set(0,new Product(dessertList.get(sel-1).getName()+"(Large)",dessertList.get(sel-1).getDescription(),dessertList.get(sel-1).getPrice()+1.0));
+        }
+        System.out.print("\"");
+        System.out.printf("%-25s",optionList.get(0).getName());
+        System.out.println("  | W " + optionList.get(0).getPrice() + " | " + optionList.get(0).getDescription()+ "\"");
 
         System.out.println("위 메뉴를 장바구니에 추가하시겠습니까?");
         System.out.println("1. 확인           2. 취소");
         System.out.println();
 
         check = sc.nextInt();
+
         if (check == 1){
-            order.setOrderList(dessertList.get(sel-1));
-            System.out.println(dessertList.get(sel-1).getName() + " 가 장바구니에 추가되었습니다.");
+            order.setOrderList(optionList.get(0));
+            System.out.println(optionList.get(0).getName() + " 가 장바구니에 추가되었습니다.");
+            optionList.clear();
             System.out.println();
         } else if (check == 2) {
         } else {
