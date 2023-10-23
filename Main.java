@@ -1,4 +1,4 @@
-package Kiosk;
+package GitHub.Kiosk;
 
 
 public class Main {

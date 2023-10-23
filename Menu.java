@@ -1,7 +1,6 @@
-package Kiosk;
+package GitHub.Kiosk;
 
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 public class Menu {

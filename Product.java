@@ -1,5 +1,4 @@
-package Kiosk;
-
+package GitHub.Kiosk;
 
 
 

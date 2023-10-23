@@ -1,4 +1,4 @@
-package Kiosk;
+package GitHub.Kiosk;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
@@ -20,7 +20,7 @@ public class Order {
         orderList.add(product);
     }
 
-    public void  totalOderList(){
+    public void totalOderList(){
         System.out.println("아래와 같이 주문 하시겠습니까?");
         System.out.println();
 
